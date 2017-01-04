@@ -1,3 +1,9 @@
+						***********************************************
+						***                                         ***         
+						***               MACHINE CODE				***
+						***											***
+						*********************************************** 
+
 ==================================================
 		Execution of a program by the CPU
 ==================================================
@@ -69,3 +75,65 @@ The so called assembler translates these instructions into binary machine code:
 	/      \ /      \	
 	00111110 00000001
 
+
+						***********************************************
+						***                                         ***         
+						***   ALGORITHMIC COMPLEXITY / BIG-O /		***
+						***			AYMPTOTIC NOTATION				***
+						***											***
+						*********************************************** 
+
+==================================================
+		Asymptotic Notation
+==================================================
+
+For measuring an algorithms efficiency independent on the hardware and other
+influencen of the machine running the program the asymptotic complexity is mesaured.
+The notation for the asymptotic complexity is called Big-O notation. It's a way of
+analizing the algorithms growth of runtime asymptotically. That is as the size of the
+inputs grow towards infinity, e.g. sorting an array of size 10 compared to sorting an
+array of size 1000, how does the runtime of the program grow?
+
+For example: { O(n) }
+|---------------------------------------------------------------------------------------| 
+|  A primitive approach to counting a strings size is to loop over it and increment a 	|
+|  counter,for each character. This algorithm runs in linear time, which respect 		|
+|  to the number of characters (n) in the string --> O(n).								|
+|---------------------------------------------------------------------------------------| 
+
+In this example, running the algorithm on an 20 character string takes twice as long as
+running it with a 10 character string. That is because the program has to look at each character and each character takes the same amount of time to look at.
+
+Another example: { O(1) } 
+ |---------------------------------------------------------------------------------------| 
+ |  To improve the speed of the algorithm in the first example, the size of the string	 |
+ |	is being stored in a variable called len which is initialized before the first 		 |
+ |	character is even written to the string. Accessing a varibale is a asymptotically	 |
+ |	constant time operation --> O(1)													 |
+ |	This programm is referred to as running in constant time with respect to its input	 |
+ |	size.																				 |
+ |---------------------------------------------------------------------------------------| 
+
+
+==================================================
+		Big-O runtimes
+==================================================
+These are common runtimes for algorithm:
+	O (n) -- linear runtime
+	O (n^2) -- quadratic runtime
+	O (1) -- constant runtime
+	O (log (n)) -- logarithmic runtime
+	O (2^n) -- one of the most time consuming complexities
+
+---------------------------------------- 
+
+Best- / Worstcase:
+Because the runtime of an algorithm depends on the set of the inputted values, there is
+a bestcase and a worstcase scenario. These runtimes are also represented in the Big-O
+notation. The symbol used for describing the bestcase scenario is omega Ω. 
+For example the binary search algorithm has a bestcase runtime of Ω(1). 
+The worstcase is represented by the O. The binary search algorithm has a worst case runtime
+of O(log (n)).
+Algorithm that have the same best- and worstcase runtime are represented by the symbol
+Theta Θ. This applies to the 2nd example where the stringlength is stored in a variable
+and the size does not affect the runtime. So the actual complexity is Θ (1).
