@@ -1,0 +1,71 @@
+==================================================
+		Execution of a program by the CPU
+==================================================
+
+----------------------------------------
+1. Loading the program:
+----------------------------------------
+a) The program is loaded from the hard drive into the RAM
+b) Afterwards the instructions are loaded into the CPU
+
+----------------------------------------
+2. Actually running the code:
+----------------------------------------
+Running the code consists of 4 main operations:
+	a) Fetching the instruction
+	b) Decoding the instruction
+	c) Exectuting the instruction
+	d) Writing the result into the register
+
+This cycle is being repeated until the program is done
+
+==================================================
+		Machine Code Instructions
+==================================================
+
+Machine code instructions usually consist of 2 parts:
+	a) The operation code
+	b) The operand
+
+______________________________________
+| Operation Code (Op Code) | Operand | 
+______________________________________
+
+Some instructions though only consist of the Op Code
+____________________________
+| Operation Code (Op Code) |
+____________________________
+
+------------------------------------------------------------------- 
+
+All of the Op Codes and the Operands are binary. A machine code program consists of a
+sequence of Op Codes and Operands stored in the memory (RAM). The program in the memory
+looks like this:
+
+
+							__________________ _
+							| Operation Code |  \
+							__________________    Instruction 1
+							|     Operand    |  /
+							__________________ _ 
+							| Operation Code |  \
+							__________________    Instruction 2
+							|     Operand    |  /
+							__________________ _ 
+							| Operation Code |  \
+							__________________    Instruction 3
+							|     Operand    |  /
+							__________________ - 
+							| Operation Code | -- Instruction 4
+							__________________ 
+                                                
+-------------------------------------------------------------------
+
+An example in assembly:
+	LD A, 01H (Loads 0x1 [hexadecimal 1] into the register A)
+
+The so called assembler translates these instructions into binary machine code:
+	op code   operand
+	/      \ /      \	
+	00111110 00000001
+
